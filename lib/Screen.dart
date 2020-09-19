@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 
+import 'package:flutterloginui/Componets/horizontal_listView.dart';
+
 class SecondPage extends StatefulWidget {
   @override
   _SecondPageState createState() => _SecondPageState();
@@ -52,7 +54,8 @@ class _SecondPageState extends State<SecondPage> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text("Categories"),
-          )
+          ),
+          HorizontalList(),
         ],
       ),
       drawer: Drawer(
