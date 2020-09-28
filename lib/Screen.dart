@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 
 import 'package:flutterloginui/Componets/horizontal_listView.dart';
+import 'package:flutterloginui/Componets/products.dart';
 
 class SecondPage extends StatefulWidget {
   @override
@@ -29,6 +30,7 @@ class _SecondPageState extends State<SecondPage> {
       ),
     );
     return Scaffold(
+      //App bar to
       appBar: AppBar(
         title: Text("U Sketch"),
         backgroundColor: Color(0xFFBD34C59),
@@ -56,6 +58,14 @@ class _SecondPageState extends State<SecondPage> {
             child: Text("Categories"),
           ),
           HorizontalList(),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text("New Product"),
+          ),
+          Container(
+            height: 320.0,
+            child: Products(),
+          ),
         ],
       ),
       drawer: Drawer(
@@ -78,7 +88,14 @@ class _SecondPageState extends State<SecondPage> {
               ),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () => {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SecondPage(),
+                  ),
+                ),
+              },
               child: ListTile(
                 title: Text("Home Page"),
                 leading: Icon(
