@@ -3,6 +3,7 @@ import 'package:carousel_pro/carousel_pro.dart';
 
 import 'package:flutterloginui/Componets/horizontal_listView.dart';
 import 'package:flutterloginui/Componets/products.dart';
+import 'package:flutterloginui/pages/cart.dart';
 
 class SecondPage extends StatefulWidget {
   @override
@@ -42,14 +43,22 @@ class _SecondPageState extends State<SecondPage> {
               ),
               onPressed: null),
           new IconButton(
-              icon: Icon(
-                Icons.shopping_cart,
-                color: Colors.white,
-              ),
-              onPressed: null)
+            icon: Icon(
+              Icons.shopping_cart,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => cart(),
+                ),
+              );
+            },
+          )
         ],
       ),
-      body: ListView(
+      body: Column(
         children: [
           ImageCarousel,
           //Categories List
@@ -62,10 +71,8 @@ class _SecondPageState extends State<SecondPage> {
             padding: const EdgeInsets.all(8.0),
             child: Text("New Product"),
           ),
-          Container(
-            height: 320.0,
-            child: Products(),
-          ),
+
+          Flexible(child: Products()),
         ],
       ),
       drawer: Drawer(
@@ -115,7 +122,14 @@ class _SecondPageState extends State<SecondPage> {
               ),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => cart(),
+                  ),
+                );
+              },
               child: ListTile(
                 title: Text("My orders"),
                 leading: Icon(

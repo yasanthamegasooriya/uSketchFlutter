@@ -24,20 +24,6 @@ class _ProductDetailsState extends State<ProductDetails> {
       appBar: AppBar(
         title: Text("U Sketch"),
         backgroundColor: Color(0xFFBD34C59),
-        actions: [
-          new IconButton(
-              icon: Icon(
-                Icons.search,
-                color: Colors.white,
-              ),
-              onPressed: null),
-          new IconButton(
-              icon: Icon(
-                Icons.shopping_cart,
-                color: Colors.white,
-              ),
-              onPressed: null)
-        ],
       ),
       drawer: Drawer(
         child: ListView(

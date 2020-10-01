@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "83214985848",
+    "firebase_url": "https://usketch-80401.firebaseio.com",
+    "project_id": "usketch-80401",
+    "storage_bucket": "usketch-80401.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:83214985848:android:c16934105e0f2fb4355b8d",
+        "android_client_info": {
+          "package_name": "com.tvacstudio.flutterloginui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "83214985848-mtnhsu5sjirki7v2sl9f5q923mc8p0qn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tvacstudio.flutterloginui",
+            "certificate_hash": "eedf148bbbbcd593c5cb1dc5058fb2e768324a71"
+          }
+        },
+        {
+          "client_id": "83214985848-3e4hb1vb9qftdkoe919ajr50t8utmm41.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUoVHIZwHctvQpJdxEtsAmZyAOSGMfzYQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "83214985848-3e4hb1vb9qftdkoe919ajr50t8utmm41.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
