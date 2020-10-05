@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:keyboard_visibility/keyboard_visibility.dart';
 import 'Screen.dart';
+import 'package:flutterloginui/Componets/loginGoogle.dart';
 
 void main() {
   runApp(MyApp());
@@ -253,16 +254,17 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(
                     height: 20,
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        _pageState = 2;
-                      });
-                    },
-                    child: OutlineBtn(
-                      btnText: "Create New Account",
-                    ),
-                  )
+                  // GestureDetector(
+                  //   onTap: () {
+                  //     setState(() {
+                  //       _pageState = 2;
+                  //     });
+                  //   },
+                  //   child: OutlineBtn(
+                  //     btnText: "Create New Account",
+                  //   ),
+                  // )
+                  SignInButton()
                 ],
               ),
             ],
@@ -420,3 +422,98 @@ class _OutlineBtnState extends State<OutlineBtn> {
     );
   }
 }
+
+class SignInButton extends StatefulWidget {
+  @override
+  _SignInButtonState createState() => _SignInButtonState();
+}
+
+class _SignInButtonState extends State<SignInButton> {
+  @override
+  Widget build(BuildContext context) {
+    return OutlineButton(
+      splashColor: Colors.grey,
+      onPressed: () {
+        //BuildContext context;
+        signInWithGoogle().then((result) {
+          if (result != null) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SecondPage(),
+              ),
+            );
+          }
+        });
+      },
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+      highlightElevation: 0,
+      borderSide: BorderSide(color: Colors.grey),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Image(
+                image: AssetImage("assets/images/google_logo.png"),
+                height: 35.0),
+            Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: Text(
+                'Sign in with Google',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.grey,
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// Widget _signInButton(BuildContext context) {
+//   return OutlineButton(
+//     splashColor: Colors.grey,
+//     onPressed: () {
+//       //BuildContext context;
+//       signInWithGoogle().then((result) {
+//         if (result != null) {
+//           Navigator.pushReplacement(
+//             context,
+//             MaterialPageRoute(
+//               builder: (context) => SecondPage(),
+//             ),
+//           );
+//         }
+//       });
+//     },
+//     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+//     highlightElevation: 0,
+//     borderSide: BorderSide(color: Colors.grey),
+//     child: Padding(
+//       padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+//       child: Row(
+//         mainAxisSize: MainAxisSize.min,
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         children: <Widget>[
+//           Image(
+//               image: AssetImage("assets/images/google_logo.png"), height: 35.0),
+//           Padding(
+//             padding: const EdgeInsets.only(left: 10),
+//             child: Text(
+//               'Sign in with Google',
+//               style: TextStyle(
+//                 fontSize: 20,
+//                 color: Colors.grey,
+//               ),
+//             ),
+//           )
+//         ],
+//       ),
+//     ),
+//   );
+// }

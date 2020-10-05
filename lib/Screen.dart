@@ -5,6 +5,8 @@ import 'package:flutterloginui/Componets/horizontal_listView.dart';
 import 'package:flutterloginui/Componets/products.dart';
 import 'package:flutterloginui/pages/cart.dart';
 
+//import 'package:flutterloginui/Componets/loginGoogle.dart';
+
 class SecondPage extends StatefulWidget {
   @override
   _SecondPageState createState() => _SecondPageState();
@@ -79,7 +81,7 @@ class _SecondPageState extends State<SecondPage> {
         child: ListView(
           children: [
             UserAccountsDrawerHeader(
-              accountName: Text("Ravindu"),
+              accountName: Text("ravi"),
               accountEmail: Text("ravindujayakodi71@gmail.com"),
               currentAccountPicture: GestureDetector(
                 child: CircleAvatar(
@@ -95,14 +97,7 @@ class _SecondPageState extends State<SecondPage> {
               ),
             ),
             InkWell(
-              onTap: () => {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => SecondPage(),
-                  ),
-                ),
-              },
+              onTap: () => {},
               child: ListTile(
                 title: Text("Home Page"),
                 leading: Icon(
@@ -144,6 +139,16 @@ class _SecondPageState extends State<SecondPage> {
                 title: Text("About"),
                 leading: Icon(
                   Icons.help,
+                  color: Color(0xFFBD34C59),
+                ),
+              ),
+            ),
+            InkWell(
+              onTap: () {},
+              child: ListTile(
+                title: Text("Sign Out"),
+                leading: Icon(
+                  Icons.settings_backup_restore,
                   color: Color(0xFFBD34C59),
                 ),
               ),

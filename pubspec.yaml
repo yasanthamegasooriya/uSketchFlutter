@@ -24,10 +24,11 @@ dependencies:
   flutter:
     sdk: flutter
   carousel_pro: ^1.0.0
-  firebase_auth: ^0.6.6
-  cloud_firestore: ^0.8.2+3
-  google_sign_in: ^4.5.4
-  shared_preferences: ^0.5.12
+  firebase_core: ^0.5.0
+  firebase_auth: ^0.18.1+1
+  google_sign_in: ^3.2.4
+  cloud_firestore: ^0.14.1+2
+  shared_preferences: ^0.4.3
   fluttertoast: ^7.1.1
 
 
