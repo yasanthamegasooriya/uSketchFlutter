@@ -18,6 +18,7 @@ class ProductDetails extends StatefulWidget {
 }
 
 class _ProductDetailsState extends State<ProductDetails> {
+  int _value = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -111,101 +112,327 @@ class _ProductDetailsState extends State<ProductDetails> {
               ),
             ),
           ),
-          Row(
+          //Input for the sizes
+          Column(
             children: [
-              Expanded(
-                child: MaterialButton(
-                  onPressed: () {},
-                  color: Colors.white,
-                  textColor: Colors.grey,
-                  elevation: 0.2,
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Text("Size"),
+              Row(children: [
+                Container(
+                  padding: EdgeInsets.all(30.0),
+                  child: DropdownButton(
+                    value: _value,
+                    items: [
+                      DropdownMenuItem(
+                        child: Text("First Item"),
+                        value: 1,
                       ),
-                      Expanded(
-                        child: Icon(
-                          Icons.arrow_drop_down,
-                        ),
-                      )
+                      DropdownMenuItem(
+                        child: Text("Second Item"),
+                        value: 2,
+                      ),
+                      DropdownMenuItem(child: Text("Third Item"), value: 3),
+                      DropdownMenuItem(child: Text("Fourth Item"), value: 4)
                     ],
+                    onChanged: (value) {
+                      setState(() {
+                        _value = value;
+                      });
+                    },
                   ),
                 ),
-              ),
-              Expanded(
-                child: MaterialButton(
-                  onPressed: () {},
-                  color: Colors.white,
-                  textColor: Colors.grey,
-                  elevation: 0.2,
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Text("Size"),
+                SizedBox(width: 8.0),
+                Container(
+                  width: 80.0,
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      labelText: 'Enter size',
+                    ),
+                  ),
+                )
+              ]),
+              Row(children: [
+                Container(
+                  padding: EdgeInsets.all(30.0),
+                  child: DropdownButton(
+                    value: _value,
+                    items: [
+                      DropdownMenuItem(
+                        child: Text("First Item"),
+                        value: 1,
                       ),
-                      Expanded(
-                        child: Icon(
-                          Icons.arrow_drop_down,
-                        ),
-                      )
+                      DropdownMenuItem(
+                        child: Text("Second Item"),
+                        value: 2,
+                      ),
+                      DropdownMenuItem(child: Text("Third Item"), value: 3),
+                      DropdownMenuItem(child: Text("Fourth Item"), value: 4)
                     ],
+                    onChanged: (value) {
+                      setState(() {
+                        _value = value;
+                      });
+                    },
                   ),
                 ),
-              ),
-              Expanded(
-                child: MaterialButton(
-                  onPressed: () {},
-                  color: Colors.white,
-                  textColor: Colors.grey,
-                  elevation: 0.2,
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Text("Size"),
+                SizedBox(width: 8.0),
+                Padding(
+                  padding: const EdgeInsets.all(0.0),
+                  child: Container(
+                    width: 80.0,
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        labelText: 'Enter size',
                       ),
-                      Expanded(
-                        child: Icon(
-                          Icons.arrow_drop_down,
-                        ),
-                      )
+                    ),
+                  ),
+                )
+              ]),
+              Row(children: [
+                Container(
+                  padding: EdgeInsets.all(30.0),
+                  child: DropdownButton(
+                    value: _value,
+                    items: [
+                      DropdownMenuItem(
+                        child: Text("First Item"),
+                        value: 1,
+                      ),
+                      DropdownMenuItem(
+                        child: Text("Second Item"),
+                        value: 2,
+                      ),
+                      DropdownMenuItem(child: Text("Third Item"), value: 3),
+                      DropdownMenuItem(child: Text("Fourth Item"), value: 4)
                     ],
+                    onChanged: (value) {
+                      setState(() {
+                        _value = value;
+                      });
+                    },
                   ),
                 ),
-              ),
+                SizedBox(width: 8.0),
+                Padding(
+                  padding: const EdgeInsets.all(0.0),
+                  child: Container(
+                    width: 80.0,
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        labelText: 'Enter size',
+                      ),
+                    ),
+                  ),
+                )
+              ]),
+              Row(children: [
+                Container(
+                  padding: EdgeInsets.all(30.0),
+                  child: DropdownButton(
+                    value: _value,
+                    items: [
+                      DropdownMenuItem(
+                        child: Text("First Item"),
+                        value: 1,
+                      ),
+                      DropdownMenuItem(
+                        child: Text("Second Item"),
+                        value: 2,
+                      ),
+                      DropdownMenuItem(child: Text("Third Item"), value: 3),
+                      DropdownMenuItem(child: Text("Fourth Item"), value: 4)
+                    ],
+                    onChanged: (value) {
+                      setState(() {
+                        _value = value;
+                      });
+                    },
+                  ),
+                ),
+                SizedBox(width: 8.0),
+                Padding(
+                  padding: const EdgeInsets.all(0.0),
+                  child: Container(
+                    width: 80.0,
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        labelText: 'Enter size',
+                      ),
+                    ),
+                  ),
+                )
+              ]),
+              Row(children: [
+                Container(
+                  padding: EdgeInsets.all(30.0),
+                  child: DropdownButton(
+                    value: _value,
+                    items: [
+                      DropdownMenuItem(
+                        child: Text("First Item"),
+                        value: 1,
+                      ),
+                      DropdownMenuItem(
+                        child: Text("Second Item"),
+                        value: 2,
+                      ),
+                      DropdownMenuItem(child: Text("Third Item"), value: 3),
+                      DropdownMenuItem(child: Text("Fourth Item"), value: 4)
+                    ],
+                    onChanged: (value) {
+                      setState(() {
+                        _value = value;
+                      });
+                    },
+                  ),
+                ),
+                SizedBox(width: 8.0),
+                Padding(
+                  padding: const EdgeInsets.all(0.0),
+                  child: Container(
+                    width: 80.0,
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        labelText: 'Enter size',
+                      ),
+                    ),
+                  ),
+                )
+              ]),
+              Row(children: [
+                Container(
+                  padding: EdgeInsets.all(30.0),
+                  child: DropdownButton(
+                    value: _value,
+                    items: [
+                      DropdownMenuItem(
+                        child: Text("First Item"),
+                        value: 1,
+                      ),
+                      DropdownMenuItem(
+                        child: Text("Second Item"),
+                        value: 2,
+                      ),
+                      DropdownMenuItem(child: Text("Third Item"), value: 3),
+                      DropdownMenuItem(child: Text("Fourth Item"), value: 4)
+                    ],
+                    onChanged: (value) {
+                      setState(() {
+                        _value = value;
+                      });
+                    },
+                  ),
+                ),
+                SizedBox(width: 8.0),
+                Padding(
+                  padding: const EdgeInsets.all(0.0),
+                  child: Container(
+                    width: 80.0,
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        labelText: 'Enter size',
+                      ),
+                    ),
+                  ),
+                )
+              ]),
+              Text("Hint")
             ],
           ),
-          Row(
-            children: [
-              Expanded(
-                child: MaterialButton(
-                  onPressed: () {},
-                  color: Colors.red,
-                  textColor: Colors.white,
-                  elevation: 0.2,
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Text("Buy Now"),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Icon(
-                  Icons.add_shopping_cart,
-                  color: Colors.red,
-                ),
-              ),
-              Expanded(
-                child: Icon(
-                  Icons.favorite_border,
-                  color: Colors.red,
-                ),
-              ),
-            ],
-          )
+
+          // Row(
+          //   children: [
+          //     Expanded(
+          //       child: MaterialButton(
+          //         onPressed: () {},
+          //         color: Colors.white,
+          //         textColor: Colors.grey,
+          //         elevation: 0.2,
+          //         child: Row(
+          //           children: [
+          //             Expanded(
+          //               child: Text("Size"),
+          //             ),
+          //             Expanded(
+          //               child: Icon(
+          //                 Icons.arrow_drop_down,
+          //               ),
+          //             )
+          //           ],
+          //         ),
+          //       ),
+          //     ),
+          //     Expanded(
+          //       child: MaterialButton(
+          //         onPressed: () {},
+          //         color: Colors.white,
+          //         textColor: Colors.grey,
+          //         elevation: 0.2,
+          //         child: Row(
+          //           children: [
+          //             Expanded(
+          //               child: Text("Size"),
+          //             ),
+          //             Expanded(
+          //               child: Icon(
+          //                 Icons.arrow_drop_down,
+          //               ),
+          //             )
+          //           ],
+          //         ),
+          //       ),
+          //     ),
+          //     Expanded(
+          //       child: MaterialButton(
+          //         onPressed: () {},
+          //         color: Colors.white,
+          //         textColor: Colors.grey,
+          //         elevation: 0.2,
+          //         child: Row(
+          //           children: [
+          //             Expanded(
+          //               child: Text("Size"),
+          //             ),
+          //             Expanded(
+          //               child: Icon(
+          //                 Icons.arrow_drop_down,
+          //               ),
+          //             )
+          //           ],
+          //         ),
+          //       ),
+          //     ),
+          //   ],
+          // ),
+          // Row(
+          //   children: [
+          //     Expanded(
+          //       child: MaterialButton(
+          //         onPressed: () {},
+          //         color: Colors.red,
+          //         textColor: Colors.white,
+          //         elevation: 0.2,
+          //         child: Row(
+          //           children: [
+          //             Expanded(
+          //               child: Text("Buy Now"),
+          //             ),
+          //           ],
+          //         ),
+          //       ),
+          //     ),
+          //     Expanded(
+          //       child: Icon(
+          //         Icons.add_shopping_cart,
+          //         color: Colors.red,
+          //       ),
+          //     ),
+          //     Expanded(
+          //       child: Icon(
+          //         Icons.favorite_border,
+          //         color: Colors.red,
+          //       ),
+          //     ),
+          //   ],
+          // )
         ],
       ),
     );

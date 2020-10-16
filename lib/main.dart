@@ -51,7 +51,9 @@ class _LoginPageState extends State<LoginPage> {
   double windowHeight = 0;
 
   bool _keyboardVisible = false;
-
+  final _formKey = GlobalKey<FormState>();
+  TextEditingController _emailTextController = TextEditingController();
+  TextEditingController _passwordTextController = TextEditingController();
   @override
   void initState() {
     super.initState();
@@ -202,72 +204,123 @@ class _LoginPageState extends State<LoginPage> {
                 )
               ],
             )),
-        AnimatedContainer(
-          padding: EdgeInsets.all(32),
-          width: _loginWidth,
-          height: _loginHeight,
-          curve: Curves.fastLinearToSlowEaseIn,
-          duration: Duration(milliseconds: 1000),
-          transform: Matrix4.translationValues(_loginXOffset, _loginYOffset, 1),
-          decoration: BoxDecoration(
-              color: Colors.white.withOpacity(_loginOpacity),
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(25), topRight: Radius.circular(25))),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Column(
-                children: <Widget>[
-                  Container(
-                    margin: EdgeInsets.only(bottom: 20),
-                    child: Text(
-                      "Login To Continue",
-                      style: TextStyle(fontSize: 20),
+        Form(
+          key: _formKey,
+          child: AnimatedContainer(
+            padding: EdgeInsets.all(32),
+            width: _loginWidth,
+            height: _loginHeight,
+            curve: Curves.fastLinearToSlowEaseIn,
+            duration: Duration(milliseconds: 1000),
+            transform:
+                Matrix4.translationValues(_loginXOffset, _loginYOffset, 1),
+            decoration: BoxDecoration(
+                color: Colors.white.withOpacity(_loginOpacity),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(25),
+                    topRight: Radius.circular(25))),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Column(
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsets.only(bottom: 20),
+                      child: Text(
+                        "Login To Continue",
+                        style: TextStyle(fontSize: 20),
+                      ),
                     ),
-                  ),
-                  InputWithIcon(
-                    icon: Icons.email,
-                    hint: "Enter Email...",
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  InputWithIcon(
-                    icon: Icons.vpn_key,
-                    hint: "Enter Password...",
-                  )
-                ],
-              ),
-              Column(
-                children: <Widget>[
-                  RaisedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SecondPage()),
-                      );
-                    },
-                    child: PrimaryButton(
-                      btnText: "Login",
+                    // InputWithIcon(
+                    //   icon: Icons.email,
+                    //   hint: "Enter Email...",
+                    // ),
+                    TextFormField(
+                      decoration: InputDecoration(
+                          labelText: "Email *",
+                          hintText: "Enter your Email",
+                          icon: Icon(
+                            Icons.email,
+                            color: Color(0xFFBD34C59),
+                          ),
+                          isDense: true),
+                      keyboardType: TextInputType.emailAddress,
+                      controller: _emailTextController,
+                      // ignore: missing_return
+                      validator: (value) {
+                        if (value.isEmpty) {
+                          Pattern pattern =
+                              r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+                          RegExp regex = new RegExp(pattern);
+                          if (!regex.hasMatch(pattern))
+                            return "Please make sure  your email address is valid";
+                          else
+                            return null;
+                        }
+                      },
                     ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  // GestureDetector(
-                  //   onTap: () {
-                  //     setState(() {
-                  //       _pageState = 2;
-                  //     });
-                  //   },
-                  //   child: OutlineBtn(
-                  //     btnText: "Create New Account",
-                  //   ),
-                  // )
-                  SignInButton()
-                ],
-              ),
-            ],
+
+                    SizedBox(
+                      height: 20,
+                    ),
+                    // InputWithIcon(
+                    //   icon: Icons.vpn_key,
+                    //   hint: "Enter Password...",
+                    // )
+                    TextFormField(
+                      decoration: InputDecoration(
+                          labelText: "Password",
+                          hintText: "Enter your Email",
+                          icon: Icon(
+                            Icons.lock_outline,
+                            color: Color(0xFFBD34C59),
+                          ),
+                          isDense: true),
+                      keyboardType: TextInputType.emailAddress,
+                      controller: _passwordTextController,
+                      validator: (value) {
+                        if (value.isEmpty) {
+                          return "password can not be empty";
+                        } else if (value.length < 6) {
+                          return "The password has to be atleast six character lenght";
+                        }
+                        return null;
+                      },
+                      // ignore: missing_return
+                    ),
+                  ],
+                ),
+                Column(
+                  children: <Widget>[
+                    RaisedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SecondPage()),
+                        );
+                      },
+                      child: PrimaryButton(
+                        btnText: "Login",
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    // GestureDetector(
+                    //   onTap: () {
+                    //     setState(() {
+                    //       _pageState = 2;
+                    //     });
+                    //   },
+                    //   child: OutlineBtn(
+                    //     btnText: "Create New Account",
+                    //   ),
+                    // )
+                    SignInButton()
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
         AnimatedContainer(

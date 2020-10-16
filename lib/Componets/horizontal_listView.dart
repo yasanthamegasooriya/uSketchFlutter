@@ -9,44 +9,32 @@ class HorizontalList extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         children: [
           Category(
-            image_location: "assets/images/Category/dress1.jpg",
-            image_caption: "Dress",
+            image_location: "assets/images/0001.jpg",
+            image_caption: "Palazzo Pant-1",
           ),
           Category(
-            image_location: "assets/images/Category/dress2.jpg",
-            image_caption: "Dress",
+            image_location: "assets/images/0002.jpg",
+            image_caption: "Gent Trouser",
           ),
           Category(
-            image_location: "assets/images/Category/dress3.jpg",
-            image_caption: "Dress",
+            image_location: "assets/images/0003.jpg",
+            image_caption: "Palazzo Pant-2",
           ),
           Category(
-            image_location: "assets/images/Category/dress4.jpg",
-            image_caption: "Dress",
+            image_location: "assets/images/0004.jpg",
+            image_caption: "Short Frock",
           ),
           Category(
-            image_location: "assets/images/Category/dress5.jpg",
-            image_caption: "Dress",
+            image_location: "assets/images/0005.jpg",
+            image_caption: "Long Frock",
           ),
           Category(
-            image_location: "assets/images/Category/dress6.jpg",
-            image_caption: "Dress",
+            image_location: "assets/images/0006.jpg",
+            image_caption: "Blouse - with long sleeves",
           ),
           Category(
-            image_location: "assets/images/Category/dress7.jpg",
-            image_caption: "Dress",
-          ),
-          Category(
-            image_location: "assets/images/Category/dress8.png",
-            image_caption: "Dress",
-          ),
-          Category(
-            image_location: "assets/images/Category/dress9.png",
-            image_caption: "Dress",
-          ),
-          Category(
-            image_location: "assets/images/Category/dress10.png",
-            image_caption: "Dress",
+            image_location: "assets/images/0007.jpg",
+            image_caption: "Blouse",
           ),
         ],
       ),

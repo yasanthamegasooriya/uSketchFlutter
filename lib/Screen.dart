@@ -3,9 +3,12 @@ import 'package:carousel_pro/carousel_pro.dart';
 
 import 'package:flutterloginui/Componets/horizontal_listView.dart';
 import 'package:flutterloginui/Componets/products.dart';
+import 'package:flutterloginui/main.dart';
 import 'package:flutterloginui/pages/cart.dart';
+import 'package:flutterloginui/Componets/wallet.dart';
+import 'package:flutterloginui/Componets/colorPicker.dart';
 
-//import 'package:flutterloginui/Componets/loginGoogle.dart';
+import 'package:flutterloginui/Componets/loginGoogle.dart';
 
 class SecondPage extends StatefulWidget {
   @override
@@ -43,7 +46,14 @@ class _SecondPageState extends State<SecondPage> {
                 Icons.search,
                 color: Colors.white,
               ),
-              onPressed: null),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Wallet(),
+                  ),
+                );
+              }),
           new IconButton(
             icon: Icon(
               Icons.shopping_cart,
@@ -64,14 +74,17 @@ class _SecondPageState extends State<SecondPage> {
         children: [
           ImageCarousel,
           //Categories List
+          // Padding(
+          //   padding: const EdgeInsets.all(8.0),
+          //   child: Text("Categories"),
+          // ),
+          //HorizontalList(),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text("Categories"),
-          ),
-          HorizontalList(),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text("New Product"),
+            child: Text(
+              "Our Products",
+              style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w800),
+            ),
           ),
 
           Flexible(child: Products()),
@@ -134,7 +147,14 @@ class _SecondPageState extends State<SecondPage> {
               ),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => colorPicker(),
+                  ),
+                );
+              },
               child: ListTile(
                 title: Text("About"),
                 leading: Icon(
@@ -144,7 +164,14 @@ class _SecondPageState extends State<SecondPage> {
               ),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                // signOutGoogle().then((value) => Navigator.pushAndRemoveUntil(
+                //     context,
+                //     MaterialPageRoute(
+                //       builder: (context) => LoginPage(),
+                //     ),
+                //     (route) => false));
+              },
               child: ListTile(
                 title: Text("Sign Out"),
                 leading: Icon(

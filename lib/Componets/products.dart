@@ -11,40 +11,46 @@ class _ProductsState extends State<Products> {
   // ignore: non_constant_identifier_names
   var product_list = [
     {
-      'name': "Blazer",
-      'picture': "assets/images/Category/dress1.jpg",
-      'old_price': 120,
-      'price': 85,
+      'name': "Palazzo Pant-1",
+      'picture': "assets/images/0001.jpg",
+      'old_price': 2000,
+      'price': 2000,
     },
     {
-      'name': "Red dress",
-      'picture': "assets/images/Category/dress2.jpg",
-      'old_price': 100,
-      'price': 50,
+      'name': "Gent Trouser",
+      'picture': "assets/images/0002.jpg",
+      'old_price': 3500,
+      'price': 3500,
     },
     {
-      'name': "Blue dress",
-      'picture': "assets/images/Category/dress3.jpg",
-      'old_price': 100,
-      'price': 50,
+      'name': "Palazzo Pant-2",
+      'picture': "assets/images/0003.jpg",
+      'old_price': 1500,
+      'price': 1500,
     },
     {
-      'name': "Yellow dress",
-      'picture': "assets/images/Category/dress4.jpg",
-      'old_price': 100,
-      'price': 50,
+      'name': "Short Frock ",
+      'picture': "assets/images/0004.jpg",
+      'old_price': 2500,
+      'price': 2500,
     },
     {
-      'name': "Black dress",
-      'picture': "assets/images/Category/dress5.jpg",
-      'old_price': 100,
-      'price': 50,
+      'name': "Long Frock",
+      'picture': "assets/images/0005.jpg",
+      'old_price': 3000,
+      'price': 3000,
     },
     {
-      'name': "White dress",
-      'picture': "assets/images/Category/dress6.jpg",
-      'old_price': 100,
-      'price': 50,
+      'name': "long sleeves Blouse",
+      'picture': "assets/images/0006.jpg",
+      'old_price': 2500,
+      'price': 2500,
+    },
+    {
+      'name': "short sleeves Blouse ",
+      'picture': "assets/images/0007.jpg",
+      'old_price': 3000,
+      'price': 3000,
     },
   ];
 
@@ -105,17 +111,20 @@ class single_prod extends StatelessWidget {
                 child: ListTile(
                   leading: Text(
                     prod_name,
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 10.0),
                   ),
                   title: Text(
                     "\Rs.$prod_price",
                     style: TextStyle(
-                        fontWeight: FontWeight.w800, color: Colors.red),
+                        fontWeight: FontWeight.w800,
+                        color: Colors.red,
+                        fontSize: 12.0),
                   ),
-                  subtitle: Text(
-                    "\Rs.$prod_oldPrice",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
+                  // subtitle: Text(
+                  //   "\Rs.$prod_oldPrice",
+                  //   style: TextStyle(fontWeight: FontWeight.bold),
+                  // ),
                 ),
               ),
               child: Image.asset(
