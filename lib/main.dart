@@ -270,7 +270,7 @@ class _LoginPageState extends State<LoginPage> {
                     TextFormField(
                       decoration: InputDecoration(
                           labelText: "Password",
-                          hintText: "Enter your Email",
+                          hintText: "Enter your password",
                           icon: Icon(
                             Icons.lock_outline,
                             color: Color(0xFFBD34C59),
@@ -292,8 +292,12 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Column(
                   children: <Widget>[
-                    RaisedButton(
-                      onPressed: () {
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SecondPage()),
+                        );
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => SecondPage()),
@@ -306,17 +310,17 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(
                       height: 20,
                     ),
-                    // GestureDetector(
-                    //   onTap: () {
-                    //     setState(() {
-                    //       _pageState = 2;
-                    //     });
-                    //   },
-                    //   child: OutlineBtn(
-                    //     btnText: "Create New Account",
-                    //   ),
-                    // )
-                    SignInButton()
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          _pageState = 2;
+                        });
+                      },
+                      child: OutlineBtn(
+                        btnText: "Create New Account",
+                      ),
+                    )
+                    // SignInButton()
                   ],
                 ),
               ],

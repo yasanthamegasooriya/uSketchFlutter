@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 
@@ -7,6 +8,7 @@ import 'package:flutterloginui/main.dart';
 import 'package:flutterloginui/pages/cart.dart';
 import 'package:flutterloginui/Componets/wallet.dart';
 import 'package:flutterloginui/Componets/colorPicker.dart';
+import 'package:flutterloginui/pages/about.dart';
 
 import 'package:flutterloginui/Componets/loginGoogle.dart';
 
@@ -40,35 +42,35 @@ class _SecondPageState extends State<SecondPage> {
       appBar: AppBar(
         title: Text("U Sketch"),
         backgroundColor: Color(0xFFBD34C59),
-        actions: [
-          new IconButton(
-              icon: Icon(
-                Icons.search,
-                color: Colors.white,
-              ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Wallet(),
-                  ),
-                );
-              }),
-          new IconButton(
-            icon: Icon(
-              Icons.shopping_cart,
-              color: Colors.white,
-            ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => cart(),
-                ),
-              );
-            },
-          )
-        ],
+        // actions: [
+        //   new IconButton(
+        //       icon: Icon(
+        //         Icons.search,
+        //         color: Colors.white,
+        //       ),
+        //       onPressed: () {
+        //         Navigator.push(
+        //           context,
+        //           MaterialPageRoute(
+        //             builder: (context) => Wallet(),
+        //           ),
+        //         );
+        //       }),
+        // new IconButton(
+        //   icon: Icon(
+        //     Icons.shopping_cart,
+        //     color: Colors.white,
+        //   ),
+        //   onPressed: () {
+        //     Navigator.push(
+        //       context,
+        //       MaterialPageRoute(
+        //         builder: (context) => cart(),
+        //       ),
+        //     );
+        //   },
+        // )
+        // ],
       ),
       body: Column(
         children: [
@@ -94,23 +96,22 @@ class _SecondPageState extends State<SecondPage> {
         child: ListView(
           children: [
             UserAccountsDrawerHeader(
-              accountName: Text("ravi"),
-              accountEmail: Text("ravindujayakodi71@gmail.com"),
-              currentAccountPicture: GestureDetector(
-                child: CircleAvatar(
-                  backgroundColor: Colors.grey,
-                  child: Icon(
-                    Icons.person,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
+              accountName: Text("U Sketch"),
+              accountEmail: Text("usketh20@gmail.com"),
+              currentAccountPicture: Image.asset("assets/images/uSketch.jpg"),
               decoration: BoxDecoration(
                 color: Color(0xFFBD34C59),
               ),
             ),
             InkWell(
-              onTap: () => {},
+              onTap: () => {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SecondPage(),
+                  ),
+                )
+              },
               child: ListTile(
                 title: Text("Home Page"),
                 leading: Icon(
@@ -119,16 +120,23 @@ class _SecondPageState extends State<SecondPage> {
                 ),
               ),
             ),
-            InkWell(
-              onTap: () {},
-              child: ListTile(
-                title: Text("My Account"),
-                leading: Icon(
-                  Icons.person,
-                  color: Color(0xFFBD34C59),
-                ),
-              ),
-            ),
+            // InkWell(
+            //   onTap: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(
+            //         builder: (context) => SecondPage(),
+            //       ),
+            //     );
+            //   },
+            //   child: ListTile(
+            //     title: Text("My Account"),
+            //     leading: Icon(
+            //       Icons.person,
+            //       color: Color(0xFFBD34C59),
+            //     ),
+            //   ),
+            // ),
             InkWell(
               onTap: () {
                 Navigator.push(
@@ -151,7 +159,7 @@ class _SecondPageState extends State<SecondPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => colorPicker(),
+                    builder: (context) => aboutPage(),
                   ),
                 );
               },
@@ -163,22 +171,59 @@ class _SecondPageState extends State<SecondPage> {
                 ),
               ),
             ),
-            InkWell(
-              onTap: () {
-                // signOutGoogle().then((value) => Navigator.pushAndRemoveUntil(
-                //     context,
-                //     MaterialPageRoute(
-                //       builder: (context) => LoginPage(),
-                //     ),
-                //     (route) => false));
-              },
-              child: ListTile(
-                title: Text("Sign Out"),
-                leading: Icon(
-                  Icons.settings_backup_restore,
-                  color: Color(0xFFBD34C59),
+            // InkWell(
+            //   onTap: () {
+            //     // signOutGoogle().then((value) => Navigator.pushAndRemoveUntil(
+            //     //     context,
+            //     //     MaterialPageRoute(
+            //     //       builder: (context) => LoginPage(),
+            //     //     ),
+            //     //     (route) => false));
+            //   },
+            //   child: ListTile(
+            //     title: Text("Sign Out"),
+            //     leading: Icon(
+            //       Icons.settings_backup_restore,
+            //       color: Color(0xFFBD34C59),
+            //     ),
+            //   ),
+            // ),
+            SizedBox(
+              height: 400.0,
+            ),
+            Container(
+              color: Colors.black,
+              width: double.infinity,
+              height: 0.1,
+            ),
+            Container(
+              color: Colors.limeAccent,
+              alignment: Alignment.bottomLeft,
+              child: Expanded(
+                child: Align(
+                  alignment: FractionalOffset.bottomCenter,
+                  child: Row(
+                    children: [
+                      Text("Made in "),
+                      Container(
+                          height: 20.0,
+                          width: 20.0,
+                          child: Image.asset("assets/images/srilanka.jpg")),
+                      Text(" with"),
+                      Icon(
+                        Icons.favorite,
+                        color: Colors.red,
+                      ),
+                    ],
+                  ),
                 ),
               ),
+            ),
+
+            Container(
+              color: Colors.black,
+              width: double.infinity,
+              height: 0.1,
             ),
           ],
         ),
